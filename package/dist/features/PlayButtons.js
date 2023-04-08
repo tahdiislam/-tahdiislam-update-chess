@@ -55,7 +55,7 @@ var PlayButtons = function PlayButtons() {
   return _react2.default.createElement(
     _material.Grid,
     null,
-    _react2.default.createElement(
+    /* _react2.default.createElement(
       _material.Stack,
       { spacing: 2 },
       _react2.default.createElement(
@@ -72,7 +72,7 @@ var PlayButtons = function PlayButtons() {
           {
             startIcon: _react2.default.createElement(_Language2.default, null),
             variant: state.mainButtons.name === mainButtonsConst.PLAY_ONLINE ? "contained" : "outlined",
-            onload: function onClick() {
+            onLoad: function onClick() {
               dispatch(playOnlineDialog.open());
               _WsAction2.default.onlineGames(state);
             }
@@ -80,7 +80,7 @@ var PlayButtons = function PlayButtons() {
           'Play Online'
         )
       ),
-    ),
+    ), */
     _react2.default.createElement(_PlayOnlineDialog2.default, null),
   );
 };
