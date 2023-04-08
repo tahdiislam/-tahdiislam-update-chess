@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import CloseIcon from '@mui/icons-material/Close';
 import {
   Button,
   Dialog,
   DialogContent,
   DialogTitle,
   Grid,
-  IconButton,
   MenuItem,
   Slider,
   TextField,
@@ -106,9 +104,9 @@ const PlayComputerDialog = () => {
     <Dialog open={state.playComputerDialog.open} maxWidth="xs" fullWidth={true}>
       <DialogTitle>
         Play Computer
-        <IconButton onClick={() => dispatch(playComputerDialog.close())}>
+        {/* <IconButton onClick={() => dispatch(playComputerDialog.close())}>
           <CloseIcon />
-        </IconButton>
+        </IconButton> */}
       </DialogTitle>
       <DialogContent>
         <form onSubmit={handleCreateGame}>

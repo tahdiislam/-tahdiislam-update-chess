@@ -14,10 +14,6 @@ var React = _interopRequireWildcard(_react);
 
 var _reactRedux = require('react-redux');
 
-var _Close = require('@mui/icons-material/Close');
-
-var _Close2 = _interopRequireDefault(_Close);
-
 var _material = require('@mui/material');
 
 var _Pgn = require('../../common/Pgn');
@@ -110,13 +106,13 @@ var PlayOnlineDialog = function PlayOnlineDialog() {
       _material.DialogTitle,
       null,
       'Play Online',
-      React.createElement(
+      /* React.createElement(
         _material.IconButton,
         { onClick: function onClick() {
             return dispatch(playOnlineDialog.close());
           } },
         React.createElement(_Close2.default, null)
-      )
+      ) */
     ),
     React.createElement(
       _material.DialogContent,

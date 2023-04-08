@@ -1,26 +1,24 @@
-import * as React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import CloseIcon from '@mui/icons-material/Close';
+import * as React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Button,
   Dialog,
   DialogContent,
   DialogTitle,
   Grid,
-  IconButton,
   MenuItem,
   Slider,
   TextField,
-  Typography
-} from '@mui/material';
-import Pgn from '../../common/Pgn';
-import * as mainButtons from '../../features/mainButtonsSlice';
-import * as playOnlineDialog from '../../features/dialog/playOnlineDialogSlice';
-import SelectColorButtons from '../../features/dialog/SelectColorButtons';
-import * as modeConst from '../../features/mode/modeConst';
-import PlayOnlineTable from '../../features/table/PlayOnlineTable';
-import * as variantConst from '../../features/variant/variantConst';
-import WsAction from '../../features/ws/WsAction';
+  Typography,
+} from "@mui/material";
+import Pgn from "../../common/Pgn";
+import * as mainButtons from "../../features/mainButtonsSlice";
+import * as playOnlineDialog from "../../features/dialog/playOnlineDialogSlice";
+import SelectColorButtons from "../../features/dialog/SelectColorButtons";
+import * as modeConst from "../../features/mode/modeConst";
+import PlayOnlineTable from "../../features/table/PlayOnlineTable";
+import * as variantConst from "../../features/variant/variantConst";
+import WsAction from "../../features/ws/WsAction";
 
 const PlayOnlineDialog = () => {
   const state = useSelector((state) => state);
@@ -29,28 +27,28 @@ const PlayOnlineDialog = () => {
   const [fields, setFields] = React.useState({
     minutes: 5,
     increment: 3,
-    color: 'rand',
+    color: "rand",
     variant: variantConst.CLASSICAL,
   });
 
   const handleMinutesChange = (event: Event) => {
     setFields({
       ...fields,
-      minutes: event.target.value
+      minutes: event.target.value,
     });
   };
 
   const handleIncrementChange = (event: Event) => {
     setFields({
       ...fields,
-      increment: event.target.value
+      increment: event.target.value,
     });
   };
 
   const handleVariantChange = (event: Event) => {
     setFields({
       ...fields,
-      variant: event.target.value
+      variant: event.target.value,
     });
   };
 
@@ -61,28 +59,27 @@ const PlayOnlineDialog = () => {
       settings: {
         min: fields.minutes,
         increment: fields.increment,
-        color: fields.color === 'rand'
-          ? Math.random() < 0.5 ? Pgn.symbol.WHITE : Pgn.symbol.BLACK
-          : fields.color,
-        submode: 'online'
-      }
+        color:
+          fields.color === "rand"
+            ? Math.random() < 0.5
+              ? Pgn.symbol.WHITE
+              : Pgn.symbol.BLACK
+            : fields.color,
+        submode: "online",
+      },
     });
-  }
+  };
 
   return (
     <Dialog open={state.playOnlineDialog.open} maxWidth="sm" fullWidth={true}>
       <DialogTitle>
         Play Online
-        <IconButton onClick={() => dispatch(playOnlineDialog.close())}>
+        {/* <IconButton onClick={() => dispatch(playOnlineDialog.close())}>
           <CloseIcon />
-        </IconButton>
+        </IconButton> */}
       </DialogTitle>
       <DialogContent>
-        <Typography
-          id="input-minutes"
-          align="center"
-          gutterBottom
-        >
+        <Typography id="input-minutes" align="center" gutterBottom>
           Minutes per side
         </Typography>
         <Slider
@@ -95,11 +92,7 @@ const PlayOnlineDialog = () => {
           max={60}
           onChange={handleMinutesChange}
         />
-        <Typography
-          id="input-increment"
-          align="center"
-          gutterBottom
-        >
+        <Typography id="input-increment" align="center" gutterBottom>
           Increment in seconds
         </Typography>
         <Slider
@@ -125,7 +118,7 @@ const PlayOnlineDialog = () => {
           defaultValue={variantConst.CLASSICAL}
           margin="normal"
           onChange={handleVariantChange}
-          >
+        >
           <MenuItem key={0} value="classical">
             Classical
           </MenuItem>

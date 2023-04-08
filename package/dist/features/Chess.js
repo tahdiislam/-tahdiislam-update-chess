@@ -84,10 +84,6 @@ var _Game = require("./Game");
 
 var _Game2 = _interopRequireDefault(_Game);
 
-var _HeuristicsBar = require("./HeuristicsBar");
-
-var _HeuristicsBar2 = _interopRequireDefault(_HeuristicsBar);
-
 var _PlayButtons = require("./PlayButtons");
 
 var _PlayButtons2 = _interopRequireDefault(_PlayButtons);
@@ -114,7 +110,6 @@ var Chess = function Chess(_ref) {
           _react2.default.createElement(_VariantBoard2.default, {
             props: props,
           }),
-          _react2.default.createElement(_HeuristicsBar2.default, null)
         ),
         _react2.default.createElement(
           _material.Grid,
