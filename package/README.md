@@ -5,7 +5,7 @@ Easy-to-embed chessboard connected to a [chess server](https://github.com/chessl
 Ready to npm install:
 
 ```
-$ npm i @tahdiislam/update-chess
+$ npm i @tahdiislam/chess-play-online
 ```
 
 ### Demo
@@ -21,7 +21,7 @@ Thank you for your interest in this exciting project! Redux Chess is "just a che
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Chess } from '@tahdiislam/update-chess';
+import { Chess } from '@tahdiislam/chess-play-online';
 
 const props = {
   api: {

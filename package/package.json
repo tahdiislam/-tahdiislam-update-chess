@@ -1,5 +1,5 @@
 {
-  "name": "@tahdiislam/update-chess",
+  "name": "@tahdiislam/chess-play-online",
   "description": "React chessboard connected to a chess server.",
   "version": "1.0.0",
   "private": false,
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/chesslablab/redux-chess.git"
+    "url": "git+ssh://github.com/tahdiislam/-tahdiislam-update-chess"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
