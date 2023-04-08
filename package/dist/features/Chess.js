@@ -147,7 +147,7 @@ var Chess = function Chess(_ref) {
       _react2.default.createElement(_EventsStatsDialog2.default, {
         props: props,
       }),
-      _react2.default.createElement(_ProgressDialog2.default, null)
+      /* _react2.default.createElement(_ProgressDialog2.default, null) */
     )
   );
 };
