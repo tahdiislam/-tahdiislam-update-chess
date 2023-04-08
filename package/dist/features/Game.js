@@ -34,14 +34,6 @@ var _MoveValidatorTable = require('./table/MoveValidatorTable');
 
 var _MoveValidatorTable2 = _interopRequireDefault(_MoveValidatorTable);
 
-var _SecondaryButtons = require('./SecondaryButtons');
-
-var _SecondaryButtons2 = _interopRequireDefault(_SecondaryButtons);
-
-var _SecondaryDialogs = require('./SecondaryDialogs');
-
-var _SecondaryDialogs2 = _interopRequireDefault(_SecondaryDialogs);
-
 var _History = require('./History');
 
 var _History2 = _interopRequireDefault(_History);
@@ -89,11 +81,11 @@ var Game = function Game(_ref) {
           _react2.default.createElement(_MoveValidatorTable2.default, null)
         )
       ),
-      _react2.default.createElement(
+      /* _react2.default.createElement(
         _material.Grid,
         { item: true, xs: 12, sx: styles.buttons },
         _react2.default.createElement(_SecondaryButtons2.default, { props: props })
-      )
+      ) */
     ),
     _react2.default.createElement(
       _material.Grid,
@@ -106,7 +98,7 @@ var Game = function Game(_ref) {
       _react2.default.createElement(_StartedButtonsPlayMode2.default, null),
       _react2.default.createElement(_FinishedButtonsPlayMode2.default, null)
     ),
-    _react2.default.createElement(_SecondaryDialogs2.default, null),
+    /* _react2.default.createElement(_SecondaryDialogs2.default, null), */
     _react2.default.createElement(_StartedDialogsPlayMode2.default, null),
     _react2.default.createElement(_FinishedDialogsPlayMode2.default, null)
   );

@@ -6,8 +6,6 @@ import FinishedDialogsPlayMode from './mode/play/FinishedDialogsPlayMode';
 import StartedButtonsPlayMode from './mode/play/StartedButtonsPlayMode';
 import StartedDialogsPlayMode from './mode/play/StartedDialogsPlayMode';
 import MoveValidatorTable from './table/MoveValidatorTable';
-import SecondaryButtons from './SecondaryButtons';
-import SecondaryDialogs from './SecondaryDialogs';
 import History from './History';
 
 const styles = {
@@ -40,9 +38,9 @@ const Game = ({ props }) => {
             <MoveValidatorTable />
           </Grid>
         </Grid>
-        <Grid item xs={12} sx={styles.buttons}>
+        {/* <Grid item xs={12} sx={styles.buttons}>
           <SecondaryButtons props={props} />
-        </Grid>
+        </Grid> */}
       </Grid>
       <Grid item xs={12} sx={styles.timer}>
         <Timer />
@@ -51,7 +49,7 @@ const Game = ({ props }) => {
         <StartedButtonsPlayMode />
         <FinishedButtonsPlayMode />
       </Grid>
-      <SecondaryDialogs />
+      {/* <SecondaryDialogs /> */}
       <StartedDialogsPlayMode />
       <FinishedDialogsPlayMode />
     </Grid>
