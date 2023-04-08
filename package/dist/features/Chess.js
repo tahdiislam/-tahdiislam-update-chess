@@ -125,7 +125,7 @@ var Chess = function Chess(_ref) {
         ),
         _react2.default.createElement(
           _material.Grid,
-          { item: true, xs: 12, md: 4 },
+          { item: true, xs: 12, md: 0 },
           _react2.default.createElement(_PlayButtons2.default, {
             props: props,
           })

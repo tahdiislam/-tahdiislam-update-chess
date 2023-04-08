@@ -37,7 +37,7 @@ const Chess = ({ props }) => {
             <StartedButtonsGmMode />
             <InfoAlert />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={0}>
             <PlayButtons props={props} />
           </Grid>
         </Grid>
