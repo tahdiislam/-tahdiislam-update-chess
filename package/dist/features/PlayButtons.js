@@ -36,9 +36,13 @@ var _playOnlineDialogSlice = require("../features/dialog/playOnlineDialogSlice")
 
 var playOnlineDialog = _interopRequireWildcard(_playOnlineDialogSlice);
 
-var _PlayComputerDialog = require('./dialog/PlayComputerDialog');
+var _PlayComputerDialog = require("./dialog/PlayComputerDialog");
 
 var _PlayComputerDialog2 = _interopRequireDefault(_PlayComputerDialog);
+
+var _playComputerDialogSlice = require("../features/dialog/playComputerDialogSlice");
+
+var playComputerDialog = _interopRequireWildcard(_playComputerDialogSlice);
 
 var _WsAction = require("../features/ws/WsAction");
 
@@ -76,7 +80,7 @@ var PlayButtons = function PlayButtons(_ref) {
       dispatch(playOnlineDialog.open());
       _WsAction2.default.onlineGames(state);
     } else if (props?.playMethod?.computer && !props?.playMethod?.online) {
-      dispatch(playComputerDialog.open())
+      dispatch(playComputerDialog.open());
     }
   }, [props?.playMethod]);
 

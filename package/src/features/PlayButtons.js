@@ -9,6 +9,7 @@ import PlayOnlineDialog from "./dialog/PlayOnlineDialog";
 import * as playOnlineDialog from "../features/dialog/playOnlineDialogSlice";
 import WsAction from "../features/ws/WsAction";
 import PlayComputerDialog from "./dialog/PlayComputerDialog";
+import * as playComputerDialog from '../features/dialog/playComputerDialogSlice';
 
 const PlayButtons = ({ props }) => {
   const state = useSelector((state) => state);
