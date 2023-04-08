@@ -28,18 +28,18 @@ const Chess = ({ props }) => {
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <Grid container spacing={1}>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={7}>
             <VariantBoard props={props} />
             <HeuristicsBar />
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={4}>
             <Game props={props} />
             <GameTable />
             <StartedButtonsAnalysisMode />
             <StartedButtonsGmMode />
             <InfoAlert />
           </Grid>
-          <Grid item xs={12} md={2}>
+          <Grid item xs={12} md={1}>
             <PlayButtons props={props} />
           </Grid>
         </Grid>
@@ -50,7 +50,6 @@ const Chess = ({ props }) => {
         <OpeningsStatsDialog />
         <PlayersStatsDialog props={props} />
         <EventsStatsDialog props={props} />
-        <ProgressDialog />
       </Provider>
     </ThemeProvider>
   );

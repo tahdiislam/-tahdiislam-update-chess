@@ -110,7 +110,7 @@ var Chess = function Chess(_ref) {
         { container: true, spacing: 1 },
         _react2.default.createElement(
           _material.Grid,
-          { item: true, xs: 12, md: 4 },
+          { item: true, xs: 12, md: 7 },
           _react2.default.createElement(_VariantBoard2.default, {
             props: props,
           }),
@@ -118,7 +118,7 @@ var Chess = function Chess(_ref) {
         ),
         _react2.default.createElement(
           _material.Grid,
-          { item: true, xs: 12, md: 3 },
+          { item: true, xs: 12, md: 4 },
           _react2.default.createElement(_Game2.default, { props: props }),
           _react2.default.createElement(_GameTable2.default, null),
           _react2.default.createElement(
@@ -130,7 +130,7 @@ var Chess = function Chess(_ref) {
         ),
         _react2.default.createElement(
           _material.Grid,
-          { item: true, xs: 12, md: 2 },
+          { item: true, xs: 12, md: 1 },
           _react2.default.createElement(_PlayButtons2.default, {
             props: props,
           })
@@ -147,7 +147,6 @@ var Chess = function Chess(_ref) {
       _react2.default.createElement(_EventsStatsDialog2.default, {
         props: props,
       }),
-      /* _react2.default.createElement(_ProgressDialog2.default, null) */
     )
   );
 };
