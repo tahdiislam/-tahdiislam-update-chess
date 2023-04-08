@@ -1,24 +1,27 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import LanguageIcon from '@mui/icons-material/Language';
-import { Button, ButtonGroup, Grid, Stack } from '@mui/material';
-import * as mainButtonsConst from '../features/mainButtonsConst';
-import * as modeConst from '../features/mode/modeConst';
-import Wording from '../common/Wording';
-import PlayOnlineDialog from './dialog/PlayOnlineDialog';
-import * as playOnlineDialog from '../features/dialog/playOnlineDialogSlice';
-import WsAction from '../features/ws/WsAction';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import LanguageIcon from "@mui/icons-material/Language";
+import { Button, ButtonGroup, Grid, Stack } from "@mui/material";
+import * as mainButtonsConst from "../features/mainButtonsConst";
+import * as modeConst from "../features/mode/modeConst";
+import Wording from "../common/Wording";
+import PlayOnlineDialog from "./dialog/PlayOnlineDialog";
+import * as playOnlineDialog from "../features/dialog/playOnlineDialogSlice";
+import WsAction from "../features/ws/WsAction";
+import PlayComputerDialog from "./dialog/PlayComputerDialog";
 
-const PlayButtons = ({props}) => {
-  const state = useSelector(state => state);
+const PlayButtons = ({ props }) => {
+  const state = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (props?.online) {
+    if (props?.playMethod?.online && !props?.playMethod?.computer) {
       dispatch(playOnlineDialog.open());
       WsAction.onlineGames(state);
+    } else if (props?.playMethod?.computer && !props?.playMethod?.online) {
+      dispatch(playComputerDialog.open());
     }
-  }, [props?.online]);
+  }, [props?.playMethod]);
 
   /* const disabled = state.mode.name === modeConst.PLAY &&
     state.mode.play.accepted &&
@@ -52,8 +55,9 @@ const PlayButtons = ({props}) => {
         </ButtonGroup>
       </Stack> */}
       <PlayOnlineDialog />
+      <PlayComputerDialog />
     </Grid>
   );
-}
+};
 
 export default PlayButtons;

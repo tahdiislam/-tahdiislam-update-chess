@@ -1,48 +1,68 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = require('react-redux');
+var _reactRedux = require("react-redux");
 
-var _Language = require('@mui/icons-material/Language');
+var _Language = require("@mui/icons-material/Language");
 
 var _Language2 = _interopRequireDefault(_Language);
 
-var _material = require('@mui/material');
+var _material = require("@mui/material");
 
-var _mainButtonsConst = require('../features/mainButtonsConst');
+var _mainButtonsConst = require("../features/mainButtonsConst");
 
 var mainButtonsConst = _interopRequireWildcard(_mainButtonsConst);
 
-var _modeConst = require('../features/mode/modeConst');
+var _modeConst = require("../features/mode/modeConst");
 
 var modeConst = _interopRequireWildcard(_modeConst);
 
-var _Wording = require('../common/Wording');
+var _Wording = require("../common/Wording");
 
 var _Wording2 = _interopRequireDefault(_Wording);
 
-var _PlayOnlineDialog = require('./dialog/PlayOnlineDialog');
+var _PlayOnlineDialog = require("./dialog/PlayOnlineDialog");
 
 var _PlayOnlineDialog2 = _interopRequireDefault(_PlayOnlineDialog);
 
-var _playOnlineDialogSlice = require('../features/dialog/playOnlineDialogSlice');
+var _playOnlineDialogSlice = require("../features/dialog/playOnlineDialogSlice");
 
 var playOnlineDialog = _interopRequireWildcard(_playOnlineDialogSlice);
 
-var _WsAction = require('../features/ws/WsAction');
+var _PlayComputerDialog = require('./dialog/PlayComputerDialog');
+
+var _PlayComputerDialog2 = _interopRequireDefault(_PlayComputerDialog);
+
+var _WsAction = require("../features/ws/WsAction");
 
 var _WsAction2 = _interopRequireDefault(_WsAction);
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  } else {
+    var newObj = {};
+    if (obj != null) {
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key))
+          newObj[key] = obj[key];
+      }
+    }
+    newObj.default = obj;
+    return newObj;
+  }
+}
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 var PlayButtons = function PlayButtons(_ref) {
   var props = _ref.props;
@@ -52,13 +72,15 @@ var PlayButtons = function PlayButtons(_ref) {
   var dispatch = (0, _reactRedux.useDispatch)();
 
   _react.useEffect(() => {
-    if (props?.online) {
+    if (props?.playMethod?.online && !props?.playMethod?.computer) {
       dispatch(playOnlineDialog.open());
       _WsAction2.default.onlineGames(state);
+    } else if (props?.playMethod?.computer && !props?.playMethod?.online) {
+      dispatch(playComputerDialog.open())
     }
-  }, [props?.online]);
+  }, [props?.playMethod]);
 
- /*  var disabled = state.mode.name === modeConst.PLAY && state.mode.play.accepted && (!state.mode.play.draw || state.mode.play.draw === _Wording2.default.verb.PROPOSE.toLowerCase()) && !state.mode.play.resign && !state.mode.play.resign && !state.mode.play.leave && !state.mode.play.timer.over && !state.board.isMate; */
+  /*  var disabled = state.mode.name === modeConst.PLAY && state.mode.play.accepted && (!state.mode.play.draw || state.mode.play.draw === _Wording2.default.verb.PROPOSE.toLowerCase()) && !state.mode.play.resign && !state.mode.play.resign && !state.mode.play.leave && !state.mode.play.timer.over && !state.board.isMate; */
 
   return _react2.default.createElement(
     _material.Grid,
@@ -90,6 +112,7 @@ var PlayButtons = function PlayButtons(_ref) {
       ),
     ), */
     _react2.default.createElement(_PlayOnlineDialog2.default, null),
+    _react2.default.createElement(_PlayComputerDialog2.default, null)
   );
 };
 
