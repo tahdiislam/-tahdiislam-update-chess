@@ -72,7 +72,7 @@ var PlayButtons = function PlayButtons() {
           {
             startIcon: _react2.default.createElement(_Language2.default, null),
             variant: state.mainButtons.name === mainButtonsConst.PLAY_ONLINE ? "contained" : "outlined",
-            onLoad: function onLoad() {
+            onload: function onload() {
               dispatch(playOnlineDialog.open());
               _WsAction2.default.onlineGames(state);
             }
