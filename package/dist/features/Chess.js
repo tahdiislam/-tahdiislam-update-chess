@@ -4,9 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true,
 });
 
-var react = require("react");
+var _react = require("react");
 
-var _react2 = _interopRequireDefault(react);
+var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require("react-redux");
 
@@ -92,23 +92,12 @@ var _PlayButtons = require("./PlayButtons");
 
 var _PlayButtons2 = _interopRequireDefault(_PlayButtons);
 
-var _WsAction = require('../features/ws/WsAction');
-
-var _WsAction2 = _interopRequireDefault(_WsAction);
-
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
 
 var Chess = function Chess(_ref) {
   var props = _ref.props;
-  var dispatch = (0, _reactRedux.useDispatch)();
-  react.useEffect(() => {
-    if (props?.online) {
-      dispatch(playOnlineDialog.open());
-      _WsAction2.default.onlineGames(state);
-    }
-  }, [props.online]);
 
   return _react2.default.createElement(
     _styles.ThemeProvider,
@@ -142,7 +131,9 @@ var Chess = function Chess(_ref) {
         _react2.default.createElement(
           _material.Grid,
           { item: true, xs: 12, md: 2 },
-          _react2.default.createElement(_PlayButtons2.default, null)
+          _react2.default.createElement(_PlayButtons2.default, {
+            props: props,
+          })
         )
       ),
       _react2.default.createElement(_CheckmateSkillsDialog2.default, null),

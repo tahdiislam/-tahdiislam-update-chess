@@ -7,11 +7,18 @@ import * as modeConst from '../features/mode/modeConst';
 import Wording from '../common/Wording';
 import PlayOnlineDialog from './dialog/PlayOnlineDialog';
 import * as playOnlineDialog from '../features/dialog/playOnlineDialogSlice';
-// import WsAction from '../features/ws/WsAction';
+import WsAction from '../features/ws/WsAction';
 
-const PlayButtons = () => {
+const PlayButtons = ({props}) => {
   const state = useSelector(state => state);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (props?.online) {
+      dispatch(playOnlineDialog.open());
+      WsAction.onlineGames(state);
+    }
+  }, [props?.online]);
 
   /* const disabled = state.mode.name === modeConst.PLAY &&
     state.mode.play.accepted &&

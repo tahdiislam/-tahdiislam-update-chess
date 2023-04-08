@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Provider, useDispatch } from "react-redux";
+import { Provider } from "react-redux";
 import { Grid } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import "../index.css";
@@ -22,16 +22,8 @@ import GameTable from "./table/GameTable";
 import Game from "./Game";
 import HeuristicsBar from "./HeuristicsBar";
 import PlayButtons from "./PlayButtons";
-import WsAction from "../features/ws/WsAction";
 
 const Chess = ({ props }) => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    if (props?.online) {
-      dispatch(playOnlineDialog.open());
-      WsAction.onlineGames(state);
-    }
-  }, [props.online]);
   return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
@@ -48,7 +40,7 @@ const Chess = ({ props }) => {
             <InfoAlert />
           </Grid>
           <Grid item xs={12} md={2}>
-            <PlayButtons />
+            <PlayButtons props={props} />
           </Grid>
         </Grid>
         <CheckmateSkillsDialog />

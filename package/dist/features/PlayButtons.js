@@ -44,13 +44,21 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var PlayButtons = function PlayButtons() {
+var PlayButtons = function PlayButtons(_ref) {
+  var props = _ref.props;
   var state = (0, _reactRedux.useSelector)(function (state) {
     return state;
   });
   var dispatch = (0, _reactRedux.useDispatch)();
 
-  var disabled = state.mode.name === modeConst.PLAY && state.mode.play.accepted && (!state.mode.play.draw || state.mode.play.draw === _Wording2.default.verb.PROPOSE.toLowerCase()) && !state.mode.play.resign && !state.mode.play.resign && !state.mode.play.leave && !state.mode.play.timer.over && !state.board.isMate;
+  _react.useEffect(() => {
+    if (props?.online) {
+      dispatch(playOnlineDialog.open());
+      _WsAction2.default.onlineGames(state);
+    }
+  }, [props?.online]);
+
+ /*  var disabled = state.mode.name === modeConst.PLAY && state.mode.play.accepted && (!state.mode.play.draw || state.mode.play.draw === _Wording2.default.verb.PROPOSE.toLowerCase()) && !state.mode.play.resign && !state.mode.play.resign && !state.mode.play.leave && !state.mode.play.timer.over && !state.board.isMate; */
 
   return _react2.default.createElement(
     _material.Grid,
