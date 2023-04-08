@@ -27,7 +27,7 @@ const Chess = ({ props }) => {
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <Grid container spacing={1}>
-          <Grid item xs={12} md={7}>
+          <Grid item xs={12} md={6}>
             <VariantBoard props={props} />
           </Grid>
           <Grid item xs={12} md={4}>
@@ -37,7 +37,7 @@ const Chess = ({ props }) => {
             <StartedButtonsGmMode />
             <InfoAlert />
           </Grid>
-          <Grid item xs={12} md={1}>
+          <Grid item xs={12} md={4}>
             <PlayButtons props={props} />
           </Grid>
         </Grid>
