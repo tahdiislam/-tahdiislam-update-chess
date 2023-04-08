@@ -106,7 +106,7 @@ var Chess = function Chess(_ref) {
         { container: true, spacing: 1 },
         _react2.default.createElement(
           _material.Grid,
-          { item: true, xs: 12, md: 7 },
+          { item: true, xs: 12, md: 6 },
           _react2.default.createElement(_VariantBoard2.default, {
             props: props,
           }),
@@ -125,7 +125,7 @@ var Chess = function Chess(_ref) {
         ),
         _react2.default.createElement(
           _material.Grid,
-          { item: true, xs: 12, md: 1 },
+          { item: true, xs: 12, md: 4 },
           _react2.default.createElement(_PlayButtons2.default, {
             props: props,
           })
