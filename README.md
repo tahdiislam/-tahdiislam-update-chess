@@ -1,4 +1,4 @@
-## Redux Chess
+## Chessboard
 
 Easy-to-embed chessboard connected to a [chess server](https://github.com/chesslablab/chess-server).
 
@@ -10,35 +10,47 @@ $ npm i @tahdiislam/chess-play-online
 
 ### Demo
 
-Check out [this demo](https://www.chesslablab.com/).
+<!-- Check out [this demo](https://www.chesslablab.com/). -->
 
-![Figure 1](/src/assets/img/docs/figure-01.png)
+<!-- ![Figure 1](/src/assets/img/docs/figure-01.png) -->
 
 ### Setup
 
 Thank you for your interest in this exciting project! Redux Chess is "just a chessboard" as lightweight as it can possibly be. It requires this [chess server](https://github.com/chesslablab/chess-server) up and running as well as this [chess API](https://github.com/chesslablab/chess-api).
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Chess } from '@tahdiislam/chess-play-online';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Chess } from "@tahdiislam/chess-play-online";
+
+/* 
+
+You have to set the playMethod with parameter. You can only set true for one method for one time. If you set one method is true other 3 will be false. You can not set true 2 or more method at one time. Also you can add 4 buttons in you app make it more user friendly.
+
+*/
 
 const props = {
   api: {
-    prot: 'https',
-    host: 'pchess.net',
-    port: '443'
+    prot: "https",
+    host: "pchess.net",
+    port: "443",
   },
   server: {
-    prot: 'wss',
-    host: 'pchess.net',
-    port: '8443'
-  }
+    prot: "wss",
+    host: "pchess.net",
+    port: "8443",
+  },
+  playMethod: {
+    online: true,
+    computer: false,
+    playFriend: false,
+    enterCode: false,
+  },
 };
 
 ReactDOM.render(
   <Chess props={props} />,
-  document.getElementById('redux-chess')
+  document.getElementById("redux-chess")
 );
 ```
 
@@ -73,9 +85,3 @@ Also, it sends HTTP requests to a REST API that needs to be setup as described i
 ### License
 
 The MIT License.
-
-### Contributions
-
-See the [contributing guidelines](https://github.com/chesslablab/redux-chess/blob/master/CONTRIBUTING.md).
-
-Happy learning and coding! Thank you, and keep it up.
