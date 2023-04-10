@@ -15,7 +15,6 @@ import LoadFenDialog from "./dialog/LoadFenDialog";
 import LoadPgnDialog from "./dialog/LoadPgnDialog";
 import OpeningsStatsDialog from "./dialog/OpeningsStatsDialog";
 import PlayersStatsDialog from "./dialog/PlayersStatsDialog";
-import ProgressDialog from "./dialog/ProgressDialog";
 import StartedButtonsAnalysisMode from "./mode/analysis/StartedButtonsAnalysisMode";
 import StartedButtonsGmMode from "./mode/gm//StartedButtonsGmMode";
 import GameTable from "./table/GameTable";

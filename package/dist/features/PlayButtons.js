@@ -10,23 +10,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require("react-redux");
 
-var _Language = require("@mui/icons-material/Language");
-
-var _Language2 = _interopRequireDefault(_Language);
-
 var _material = require("@mui/material");
-
-var _mainButtonsConst = require("../features/mainButtonsConst");
-
-var mainButtonsConst = _interopRequireWildcard(_mainButtonsConst);
-
-var _modeConst = require("../features/mode/modeConst");
-
-var modeConst = _interopRequireWildcard(_modeConst);
-
-var _Wording = require("../common/Wording");
-
-var _Wording2 = _interopRequireDefault(_Wording);
 
 var _PlayOnlineDialog = require("./dialog/PlayOnlineDialog");
 
@@ -52,15 +36,19 @@ var _EnterInviteCodeDialog = require("./dialog/EnterInviteCodeDialog");
 
 var _EnterInviteCodeDialog2 = _interopRequireDefault(_EnterInviteCodeDialog);
 
-var _createInviteCodeDialogSlice = require('../features/dialog/createInviteCodeDialogSlice');
+var _createInviteCodeDialogSlice = require("../features/dialog/createInviteCodeDialogSlice");
 
-var createInviteCodeDialog = _interopRequireWildcard(_createInviteCodeDialogSlice);
+var createInviteCodeDialog = _interopRequireWildcard(
+  _createInviteCodeDialogSlice
+);
 
-var _enterInviteCodeDialogSlice = require('../features/dialog/enterInviteCodeDialogSlice');
+var _enterInviteCodeDialogSlice = require("../features/dialog/enterInviteCodeDialogSlice");
 
-var enterInviteCodeDialog = _interopRequireWildcard(_enterInviteCodeDialogSlice);
+var enterInviteCodeDialog = _interopRequireWildcard(
+  _enterInviteCodeDialogSlice
+);
 
-var _modeSlice = require('../features/mode/modeSlice');
+var _modeSlice = require("../features/mode/modeSlice");
 
 var mode = _interopRequireWildcard(_modeSlice);
 
@@ -103,7 +91,7 @@ var PlayButtons = function PlayButtons(_ref) {
       !props?.playMethod?.playFriend
     ) {
       dispatch(playOnlineDialog.open());
-      _WsAction2.onlineGames(state);
+      _WsAction2.default.onlineGames(state);
     } else if (
       props?.playMethod?.computer &&
       !props?.playMethod?.online &&
@@ -129,37 +117,9 @@ var PlayButtons = function PlayButtons(_ref) {
     }
   }, [props?.playMethod]);
 
-  /*  var disabled = state.mode.name === modeConst.PLAY && state.mode.play.accepted && (!state.mode.play.draw || state.mode.play.draw === _Wording2.default.verb.PROPOSE.toLowerCase()) && !state.mode.play.resign && !state.mode.play.resign && !state.mode.play.leave && !state.mode.play.timer.over && !state.board.isMate; */
-
   return _react2.default.createElement(
     _material.Grid,
     null,
-    /* _react2.default.createElement(
-      _material.Stack,
-      { spacing: 2 },
-      _react2.default.createElement(
-        _material.ButtonGroup,
-        {
-          size: 'large',
-          orientation: 'vertical',
-          'aria-label': 'Play Online',
-          fullWidth: true,
-          disabled: disabled
-        },
-        _react2.default.createElement(
-          _material.Button,
-          {
-            startIcon: _react2.default.createElement(_Language2.default, null),
-            variant: state.mainButtons.name === mainButtonsConst.PLAY_ONLINE ? "contained" : "outlined",
-            onLoad: function onClick() {
-              dispatch(playOnlineDialog.open());
-              _WsAction2.default.onlineGames(state);
-            }
-          },
-          'Play Online'
-        )
-      ),
-    ), */
     _react2.default.createElement(_CreateInviteCodeDialog2.default, null),
     _react2.default.createElement(_EnterInviteCodeDialog2.default, null),
     _react2.default.createElement(_PlayOnlineDialog2.default, null),

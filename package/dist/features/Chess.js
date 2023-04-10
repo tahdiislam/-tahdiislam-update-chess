@@ -62,10 +62,6 @@ var _PlayersStatsDialog = require("./dialog/PlayersStatsDialog");
 
 var _PlayersStatsDialog2 = _interopRequireDefault(_PlayersStatsDialog);
 
-var _ProgressDialog = require("./dialog/ProgressDialog");
-
-var _ProgressDialog2 = _interopRequireDefault(_ProgressDialog);
-
 var _StartedButtonsAnalysisMode = require("./mode/analysis/StartedButtonsAnalysisMode");
 
 var _StartedButtonsAnalysisMode2 = _interopRequireDefault(
