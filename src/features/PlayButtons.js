@@ -22,6 +22,9 @@ const PlayButtons = ({ props }) => {
       !props?.playMethod?.enterCode &&
       !props?.playMethod?.playFriend
     ) {
+      dispatch(playComputerDialog.close());
+      dispatch(createInviteCodeDialog.close());
+      dispatch(enterInviteCodeDialog.close());
       dispatch(playOnlineDialog.open());
       WsAction.onlineGames(state);
     } else if (
@@ -30,6 +33,9 @@ const PlayButtons = ({ props }) => {
       !props?.playMethod?.enterCode &&
       !props?.playMethod?.playFriend
     ) {
+      dispatch(playOnlineDialog.close());
+      dispatch(createInviteCodeDialog.close());
+      dispatch(enterInviteCodeDialog.close());
       dispatch(playComputerDialog.open());
     } else if (
       props?.playMethod?.playFriend &&
@@ -37,6 +43,9 @@ const PlayButtons = ({ props }) => {
       !props?.playMethod?.computer &&
       !props?.playMethod?.enterCode
     ) {
+      dispatch(playOnlineDialog.close());
+      dispatch(playComputerDialog.close());
+      dispatch(enterInviteCodeDialog.close());
       dispatch(createInviteCodeDialog.open());
       dispatch(mode.startAnalysis());
     } else if (
@@ -45,6 +54,9 @@ const PlayButtons = ({ props }) => {
       !props?.playMethod?.online &&
       !props?.playMethod?.computer
     ) {
+      dispatch(playOnlineDialog.close());
+      dispatch(playComputerDialog.close());
+      dispatch(createInviteCodeDialog.close())
       dispatch(enterInviteCodeDialog.open());
     } else {
       dispatch(playOnlineDialog.close());
