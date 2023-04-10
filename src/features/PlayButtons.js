@@ -46,6 +46,11 @@ const PlayButtons = ({ props }) => {
       !props?.playMethod?.computer
     ) {
       dispatch(enterInviteCodeDialog.open());
+    } else {
+      dispatch(playOnlineDialog.close());
+      dispatch(playComputerDialog.close());
+      dispatch(createInviteCodeDialog.close());
+      dispatch(enterInviteCodeDialog.close());
     }
   }, [props?.playMethod]);
 

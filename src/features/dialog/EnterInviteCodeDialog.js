@@ -39,9 +39,6 @@ const EnterInviteCodeDialog = () => {
     <Dialog open={state.enterInviteCodeDialog.open} maxWidth="xs" fullWidth={true}>
       <DialogTitle>
         Enter Invite Code
-        <IconButton onClick={() => dispatch(enterInviteCodeDialog.close())}>
-          <CloseIcon />
-        </IconButton>
       </DialogTitle>
       <DialogContent>
         <TextField

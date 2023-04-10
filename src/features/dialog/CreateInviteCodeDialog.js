@@ -29,9 +29,6 @@ const CreateInviteCodeDialog = () => {
     <Dialog open={state.createInviteCodeDialog.open} maxWidth="xs" fullWidth={true}>
       <DialogTitle>
         Play a Friend
-        <IconButton onClick={() => dispatch(createInviteCodeDialog.close())}>
-          <CloseIcon />
-        </IconButton>
       </DialogTitle>
       {state.mode.play && state.mode.play.hash ? <CopyCode /> : <CreateCode />}
     </Dialog>
