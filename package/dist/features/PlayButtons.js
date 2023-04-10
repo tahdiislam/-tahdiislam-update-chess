@@ -44,6 +44,26 @@ var _playComputerDialogSlice = require("../features/dialog/playComputerDialogSli
 
 var playComputerDialog = _interopRequireWildcard(_playComputerDialogSlice);
 
+var _CreateInviteCodeDialog = require("./dialog/CreateInviteCodeDialog");
+
+var _CreateInviteCodeDialog2 = _interopRequireDefault(_CreateInviteCodeDialog);
+
+var _EnterInviteCodeDialog = require("./dialog/EnterInviteCodeDialog");
+
+var _EnterInviteCodeDialog2 = _interopRequireDefault(_EnterInviteCodeDialog);
+
+var _createInviteCodeDialogSlice = require('../features/dialog/createInviteCodeDialogSlice');
+
+var createInviteCodeDialog = _interopRequireWildcard(_createInviteCodeDialogSlice);
+
+var _enterInviteCodeDialogSlice = require('../features/dialog/enterInviteCodeDialogSlice');
+
+var enterInviteCodeDialog = _interopRequireWildcard(_enterInviteCodeDialogSlice);
+
+var _modeSlice = require('../features/mode/modeSlice');
+
+var mode = _interopRequireWildcard(_modeSlice);
+
 var _WsAction = require("../features/ws/WsAction");
 
 var _WsAction2 = _interopRequireDefault(_WsAction);
@@ -76,11 +96,36 @@ var PlayButtons = function PlayButtons(_ref) {
   var dispatch = (0, _reactRedux.useDispatch)();
 
   _react.useEffect(() => {
-    if (props?.playMethod?.online && !props?.playMethod?.computer) {
+    if (
+      props?.playMethod?.online &&
+      !props?.playMethod?.computer &&
+      !props?.playMethod?.enterCode &&
+      !props?.playMethod?.playFriend
+    ) {
       dispatch(playOnlineDialog.open());
-      _WsAction2.default.onlineGames(state);
-    } else if (props?.playMethod?.computer && !props?.playMethod?.online) {
+      _WsAction2.onlineGames(state);
+    } else if (
+      props?.playMethod?.computer &&
+      !props?.playMethod?.online &&
+      !props?.playMethod?.enterCode &&
+      !props?.playMethod?.playFriend
+    ) {
       dispatch(playComputerDialog.open());
+    } else if (
+      props?.playMethod?.playFriend &&
+      !props?.playMethod?.online &&
+      !props?.playMethod?.computer &&
+      !props?.playMethod?.enterCode
+    ) {
+      dispatch(createInviteCodeDialog.open());
+      dispatch(mode.startAnalysis());
+    } else if (
+      props?.playMethod?.enterCode &&
+      !props?.playMethod?.playFriend &&
+      !props?.playMethod?.online &&
+      !props?.playMethod?.computer
+    ) {
+      dispatch(enterInviteCodeDialog.open());
     }
   }, [props?.playMethod]);
 
@@ -115,6 +160,8 @@ var PlayButtons = function PlayButtons(_ref) {
         )
       ),
     ), */
+    _react2.default.createElement(_CreateInviteCodeDialog2.default, null),
+    _react2.default.createElement(_EnterInviteCodeDialog2.default, null),
     _react2.default.createElement(_PlayOnlineDialog2.default, null),
     _react2.default.createElement(_PlayComputerDialog2.default, null)
   );
