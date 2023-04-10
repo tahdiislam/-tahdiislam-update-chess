@@ -3,7 +3,7 @@
 /package-lock.json
 
 # Transpilation output
-dist
+/dist
 
 # Environment variables
 .env
