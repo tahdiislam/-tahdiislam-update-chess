@@ -17,10 +17,10 @@ const PlayButtons = ({ props }) => {
 
   useEffect(() => {
     if (
-      props?.playMethod?.online &&
-      !props?.playMethod?.computer &&
-      !props?.playMethod?.enterCode &&
-      !props?.playMethod?.playFriend
+      props.playMethod.online &&
+      !props.playMethod.computer &&
+      !props.playMethod.enterCode &&
+      !props.playMethod.playFriend
     ) {
       dispatch(playComputerDialog.close());
       dispatch(createInviteCodeDialog.close());
@@ -28,20 +28,20 @@ const PlayButtons = ({ props }) => {
       dispatch(playOnlineDialog.open());
       WsAction.onlineGames(state);
     } else if (
-      props?.playMethod?.computer &&
-      !props?.playMethod?.online &&
-      !props?.playMethod?.enterCode &&
-      !props?.playMethod?.playFriend
+      props.playMethod.computer &&
+      !props.playMethod.online &&
+      !props.playMethod.enterCode &&
+      !props.playMethod.playFriend
     ) {
       dispatch(playOnlineDialog.close());
       dispatch(createInviteCodeDialog.close());
       dispatch(enterInviteCodeDialog.close());
       dispatch(playComputerDialog.open());
     } else if (
-      props?.playMethod?.playFriend &&
-      !props?.playMethod?.online &&
-      !props?.playMethod?.computer &&
-      !props?.playMethod?.enterCode
+      props.playMethod.playFriend &&
+      !props.playMethod.online &&
+      !props.playMethod.computer &&
+      !props.playMethod.enterCode
     ) {
       dispatch(playOnlineDialog.close());
       dispatch(playComputerDialog.close());
@@ -49,10 +49,10 @@ const PlayButtons = ({ props }) => {
       dispatch(createInviteCodeDialog.open());
       dispatch(mode.startAnalysis());
     } else if (
-      props?.playMethod?.enterCode &&
-      !props?.playMethod?.playFriend &&
-      !props?.playMethod?.online &&
-      !props?.playMethod?.computer
+      props.playMethod.enterCode &&
+      !props.playMethod.playFriend &&
+      !props.playMethod.online &&
+      !props.playMethod.computer
     ) {
       dispatch(playOnlineDialog.close());
       dispatch(playComputerDialog.close());
@@ -64,7 +64,7 @@ const PlayButtons = ({ props }) => {
       dispatch(createInviteCodeDialog.close());
       dispatch(enterInviteCodeDialog.close());
     }
-  }, [props?.playMethod]);
+  }, [props.playMethod]);
 
   return (
     <Grid>
