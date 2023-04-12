@@ -21,9 +21,9 @@ const StartedButtonsPlayMode = () => {
       ) {
         return (
           <Fragment>
-            <Stack spacing={1} direction={row}>
+            <Stack spacing={2} direction={row}>
               <Button
-                sx={{ m: 1, width: "50%"}}
+                sx={{ width: "50%" }}
                 variant="contained"
                 size="medium"
                 aria-label="Game Buttons"
@@ -33,7 +33,7 @@ const StartedButtonsPlayMode = () => {
                 Offer draw
               </Button>
               <Button
-                sx={{ m: 1, width: "50%"}}
+                sx={{ width: "50%" }}
                 variant="contained"
                 size="medium"
                 aria-label="Game Buttons"
@@ -45,11 +45,9 @@ const StartedButtonsPlayMode = () => {
             </Stack>
             <Button
               variant="contained"
-              sx={{ m: 1 }}
+              sx={{ m: 1.5, width: "100%" }}
               size="medium"
               aria-label="Game Buttons"
-              orientation="vertical"
-              fullWidth={true}
               disabled={!state.board.movetext}
               onClick={() => dispatch(offerTakebackDialog.open())}
             >
