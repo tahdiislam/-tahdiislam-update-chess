@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Button, ButtonGroup } from "@mui/material/";
+import { Button, Stack } from "@mui/material/";
 import * as modeConst from "../../../features/mode/modeConst";
 import * as offerDrawDialog from "../../../features/dialog/offerDrawDialogSlice";
 import * as acceptResignDialog from "../../../features/dialog/acceptResignDialogSlice";
@@ -21,24 +21,31 @@ const StartedButtonsPlayMode = () => {
       ) {
         return (
           <Fragment>
-            <ButtonGroup
-              sx={{ m: 1.5 }}
-              variant="contained"
-              size="medium"
-              aria-label="Game Buttons"
-              orientation="horizontal"
-              fullWidth={false}
-            >
-              <Button onClick={() => dispatch(offerDrawDialog.open())}>
+            <Stack spacing={1} direction={row}>
+              <Button
+                sx={{ m: 1, width: "50%"}}
+                variant="contained"
+                size="medium"
+                aria-label="Game Buttons"
+                fullWidth={false}
+                onClick={() => dispatch(offerDrawDialog.open())}
+              >
                 Offer draw
               </Button>
-              <Button onClick={() => dispatch(acceptResignDialog.open())}>
+              <Button
+                sx={{ m: 1, width: "50%"}}
+                variant="contained"
+                size="medium"
+                aria-label="Game Buttons"
+                fullWidth={false}
+                onClick={() => dispatch(acceptResignDialog.open())}
+              >
                 Resign
               </Button>
-            </ButtonGroup>
+            </Stack>
             <Button
               variant="contained"
-              sx={{ m: 1.5 }}
+              sx={{ m: 1 }}
               size="medium"
               aria-label="Game Buttons"
               orientation="vertical"
