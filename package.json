@@ -1,7 +1,7 @@
 {
   "name": "@tahdiislam/chess-play-online",
   "description": "React chessboard connected to a chess server.",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "private": false,
   "author": "tahdiislam",
   "license": "MIT",

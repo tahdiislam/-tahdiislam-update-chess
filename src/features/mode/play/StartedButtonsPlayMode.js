@@ -23,7 +23,7 @@ const StartedButtonsPlayMode = () => {
           <Fragment>
             <Stack spacing={2} direction={row}>
               <Button
-                sx={{ mr: 0.5, width: "50%" }}
+                sx={{ mr: 1, mt: 2, width: "50%" }}
                 variant="contained"
                 size="medium"
                 aria-label="Game Buttons"
@@ -33,7 +33,7 @@ const StartedButtonsPlayMode = () => {
                 Offer draw
               </Button>
               <Button
-                sx={{ mr: 0.5, width: "50%" }}
+                sx={{ ml: 1, mt: 2, width: "50%" }}
                 variant="contained"
                 size="medium"
                 aria-label="Game Buttons"
@@ -45,7 +45,7 @@ const StartedButtonsPlayMode = () => {
             </Stack>
             <Button
               variant="contained"
-              sx={{ mt: 1.5, width: "100%" }}
+              sx={{ mt: 2, width: "100%" }}
               size="medium"
               aria-label="Game Buttons"
               disabled={!state.board.movetext}
